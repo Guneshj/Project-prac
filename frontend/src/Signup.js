@@ -19,13 +19,13 @@ function Signup() {
         setValues(prev => ({...prev,[event.target.name]: [event.target.value]}))
     }
 
-    const handleSubmit = (event) =>{
+    const handleSubmit = (event) => {
         event.preventDefault();
         setErrors(Validation(values));
         if(errors.name === "" && errors.email === "" && errors.password === ""){
             axios.post('http://localhost:8081/signup',values)
             .then(res=> {
-                navigate('/')
+                navigate('/');
             })
             .catch(err => console.log(err));
         }
@@ -35,6 +35,7 @@ function Signup() {
   return (
     <div className='d-flex justify-content-center align-items-center ng-primary vh-100'>
     <div className='bg-white p-3 rounded w-25'>
+        <h1>AAYOJAN.COM</h1>
         <form action="" onSubmit={handleSubmit}>
             <h2>Sign-Up</h2>
         <div className='mb-3'>
@@ -59,7 +60,7 @@ function Signup() {
             </div>
 
             <button type= 'submit' className='btn btn-success'>Sign Up</button>
-            <p>You are agree to our terms and Policies</p>
+            <p> </p>
             <Link to="/" className='btn btn-default border text-decoration-none'>Login</Link>
         </form>
     </div>
