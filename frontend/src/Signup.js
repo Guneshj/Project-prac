@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import Validation from './SignupValidation';
-import { useState } from 'react'
+
 import axios from 'axios'
 
 function Signup() {
@@ -39,20 +39,20 @@ function Signup() {
             <h2>Sign-Up</h2>
         <div className='mb-3'>
                 <label htmlFor="name"><strong>Name</strong></label>
-                <input type="email" placeholder='Enter Name' name='name'
+                <input type="text" placeholder='Enter Name' name='name'
                onChange={handleInput} className='form-control rounded-0'/>
                {errors.name && <span className='text-denger'>{errors.name}</span>}
             </div>
 
             <div className='mb-3'>
-                <label htmlFor="email">Email</label>
+                <label htmlFor="email"><strong>Email</strong></label>
                 <input type="email" placeholder='Enter Email' name='email' 
                onChange={handleInput} className='form-control rounded-0'/>
                {errors.email && <span className='text-denger'>{errors.email}</span>}
             </div>
 
             <div className='mb-3'>
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password"><strong>Password</strong></label>
                 <input type="password" placeholder='Enter Password' name='password'
                onChange={handleInput} className='form-control rounded-0'/>
                {errors.password && <span className='text-denger'>{errors.password}</span>}

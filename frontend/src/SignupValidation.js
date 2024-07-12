@@ -8,13 +8,9 @@ function Validation (values){
     if(values.name === "") {
         error.name = "Name Should not be empty"
     }
-   
     else {
         error.name = ""
     }
-
-
-
 
     if(values.email === "") {
         error.email = "Name Should not be empty"
