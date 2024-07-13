@@ -19,13 +19,14 @@ function Signup() {
         setValues(prev => ({...prev,[event.target.name]: [event.target.value]}))
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async(event) => {
         event.preventDefault();
         setErrors(Validation(values));
         if(errors.name === "" && errors.email === "" && errors.password === ""){
             axios.post('http://localhost:8081/signup',values)
             .then(res=> {
-                navigate('/');
+               console.log(res);
+               navigate('/')
             })
             .catch(err => console.log(err));
         }
